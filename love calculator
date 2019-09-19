@@ -1,0 +1,52 @@
+<!-- love calculator -->
+<div class="w3-container w3-border">
+  
+  <!-- simple display and person of interest input -->
+  <div class="w3-container">
+    <div class="w3-margin w3-center w3-red"><h3>Love Calculator</h3></div>
+    <div class=" w3-container w3-margin w3-card-4 w3-border">
+      <div class="w3-center">
+        <h3>Who doth your body ache for?</h3>
+        <form class="w3-container">
+        <input id="user_input" class="w3-input w3-border w3-center" type="text" style="width:30%;margin-left:440px;">
+      </form><br>
+        <div class="w3-btn w3-ripple w3-red" onclick="love_me()">Ask the fates</div>
+      </div><br>
+    </div>
+  </div>
+  <!-- output the results -->
+  <div class="w3-container w3-center">
+    <div class="w3-card-4 w3-border" style="width:50%;margin-left:350px;">
+      <h3 id="answer"></h3>
+      <h5 id="answer1"></h5>
+    </div>
+  </div><br>
+  
+</div><br>
+<script>
+  //love calculator functions
+  function love_me(){
+    //get entered value
+    var user = document.getElementById('user_input').value;
+    //if nothing is entered this phrase is displayed
+    if(user === ""){
+      document.getElementById('answer').innerHTML = "Alas, you have entered no one so no love is returned to your sorry aching body...";
+    }
+    //if a name is entered displayed this
+    else{
+      var percent = Math.random();
+      percent = percent * 100;
+      percent = Math.floor(percent);
+      //if greater than 70% display this
+      if(percent >= 70){
+        document.getElementById('answer').innerHTML = "Love Connection!!";
+        document.getElementById('answer1').innerHTML = "You have a " + percent + "% chance that " + user + " will ease your aching...";
+      }
+      //else display this...
+      else{
+        document.getElementById('answer').innerHTML = "You are better off to keep looking...";
+        document.getElementById('answer1').innerHTML = "You have a " + percent + "% chance that " + user + " will ease your aching...";
+      }
+    }
+  }
+</script>
